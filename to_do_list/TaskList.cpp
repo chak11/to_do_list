@@ -31,7 +31,7 @@ void TaskList::rimuoviAttivita(const std::string &descrizione) {
             completate--;
         mostraTutte();
     } else {
-        std::cout << "Nessuna attività trovata con descrizione: " << descrizione << std::endl;
+        std::cout << "Nessuna attivita trovata con descrizione: " << descrizione << std::endl;
     }
 }
 
@@ -62,7 +62,7 @@ void TaskList::modificaAttivita(const std::string &descrizione, const std::strin
 
         mostraTutte();
     } else {
-        std::cout << "Attività non trovata: " << descrizione << std::endl;
+        std::cout << "Attivita non trovata: " << descrizione << std::endl;
     }
 }
 
@@ -76,22 +76,22 @@ void TaskList::mostraTutte() {
             std::cout << "Completata" << std::endl;
     }
     if (totale == 0)
-        std::cout << "\nNessuna attività presente." << std::endl;
+        std::cout << "\nNessuna attivita presente." << std::endl;
     else
         std::cout << "\nTotali: " << totale << ", da completare: " << (totale - completate) << std::endl;
 }
 
 void TaskList::mostraIncompleti() {
-    std::cout << "\nAttività da completare:" << std::endl;
+    std::cout << "\nAttivita da completare:" << std::endl;
     for (const auto &a : elenco) {
         if (!a.èCompletata())
             std::cout << "- " << a.getDescrizione() << " | " << a.getData() << std::endl;
     }
     int daFare = totale - completate;
     if (daFare == 0)
-        std::cout << "\nTutte le attività sono completate." << std::endl;
+        std::cout << "\nTutte le attivita sono completate." << std::endl;
     else
-        std::cout << "\nRimangono " << daFare << " attività da fare." << std::endl;
+        std::cout << "\nRimangono " << daFare << " attivita da fare." << std::endl;
 }
 
 void TaskList::salvaSuFile(const std::string &nomeFile) const {

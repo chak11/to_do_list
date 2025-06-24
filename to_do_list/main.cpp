@@ -7,15 +7,15 @@ int main() {
     bool uscita = false;
     int scelta;
 
-    std::cout << "\n===== Benvenuto nel tuo Gestore Attività =====" << std::endl;
+    std::cout << "\n===== Benvenuto nel tuo Gestore Attivita =====" << std::endl;
     std::cout << "\nOpzioni disponibili:" << std::endl;
     std::cout << "1) Crea una nuova lista" << std::endl;
-    std::cout << "2) Aggiungi un'attività" << std::endl;
-    std::cout << "3) Rimuovi un'attività" << std::endl;
-    std::cout << "4) Modifica un'attività" << std::endl;
+    std::cout << "2) Aggiungi un'attivita" << std::endl;
+    std::cout << "3) Rimuovi un'attivita" << std::endl;
+    std::cout << "4) Modifica un'attivita" << std::endl;
     std::cout << "5) Segna come completata" << std::endl;
-    std::cout << "6) Visualizza attività non completate" << std::endl;
-    std::cout << "7) Visualizza tutte le attività" << std::endl;
+    std::cout << "6) Visualizza attivita non completate" << std::endl;
+    std::cout << "7) Visualizza tutte le attivita" << std::endl;
     std::cout << "8) Salva su file" << std::endl;
     std::cout << "9) Carica da file" << std::endl;
     std::cout << "0) Esci" << std::endl;
@@ -31,7 +31,7 @@ int main() {
         switch (scelta) {
             case 0:
                 uscita = true;
-                std::cout << "\nGrazie per aver utilizzato il tuo Gestore Attività. A presto!" << std::endl;
+                std::cout << "\nGrazie per aver utilizzato il tuo Gestore Attivita. A presto!" << std::endl;
                 break;
             case 1:
                 std::cout << "Nome della lista: ";
@@ -42,7 +42,7 @@ int main() {
                 std::cout << "Lista '" << nomeLista << "' creata con successo." << std::endl;
                 break;
             case 2:
-                std::cout << "Descrizione dell'attività: ";
+                std::cout << "Descrizione dell'attivita: ";
                 std::cin.ignore();
                 std::getline(std::cin, descrizione);
                 std::cout << "Data di scadenza (gg/mm/aaaa): ";
@@ -51,13 +51,13 @@ int main() {
                 elenco.aggiungiAttivita(Task(data, descrizione));
                 break;
             case 3:
-                std::cout << "Inserisci la descrizione o la data dell'attività da rimuovere: ";
+                std::cout << "Inserisci la descrizione o la data dell'attivita da rimuovere: ";
                 std::cin.ignore();
                 std::getline(std::cin, descrizione);
                 elenco.rimuoviAttivita(descrizione);
                 break;
             case 4:
-                std::cout << "Attività da modificare (descrizione o data): ";
+                std::cout << "Attivita da modificare (descrizione o data): ";
                 std::cin.ignore();
                 std::getline(std::cin, descrizione);
                 std::cout << "Cosa vuoi modificare? (d=descrizione, g=data, c=completamento): ";
@@ -80,7 +80,7 @@ int main() {
                 }
                 break;
             case 5:
-                std::cout << "Descrizione o data dell'attività da completare: ";
+                std::cout << "Descrizione o data dell'attivita da completare: ";
                 std::cin.ignore();
                 std::getline(std::cin, descrizione);
                 elenco.completaAttivita(descrizione);
@@ -93,7 +93,7 @@ int main() {
                 break;
             case 8:
                 elenco.salvaSuFile(elenco.getTitolo() + ".txt");
-                std::cout << "Attività salvate su file." << std::endl;
+                std::cout << "Attivita salvate su file." << std::endl;
                 break;
             case 9:
                 std::cout << "Nome del file da caricare: ";
