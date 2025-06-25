@@ -1,7 +1,3 @@
-//
-// Created by chaki on 23/06/2025.
-//
-
 #ifndef TASK_H
 #define TASK_H
 
@@ -70,4 +66,4 @@ private:
 
 
 
-#endif //TASK_H
+#endif

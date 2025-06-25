@@ -7,20 +7,23 @@ int main() {
     bool uscita = false;
     int scelta;
 
+    // Mostra solo una volta all'avvio
     std::cout << "\n===== Benvenuto nel tuo Gestore Attivita =====" << std::endl;
-    std::cout << "\nOpzioni disponibili:" << std::endl;
-    std::cout << "1) Crea una nuova lista" << std::endl;
-    std::cout << "2) Aggiungi un'attivita" << std::endl;
-    std::cout << "3) Rimuovi un'attivita" << std::endl;
-    std::cout << "4) Modifica un'attivita" << std::endl;
-    std::cout << "5) Segna come completata" << std::endl;
-    std::cout << "6) Visualizza attivita non completate" << std::endl;
-    std::cout << "7) Visualizza tutte le attivita" << std::endl;
-    std::cout << "8) Salva su file" << std::endl;
-    std::cout << "9) Carica da file" << std::endl;
-    std::cout << "0) Esci" << std::endl;
 
     do {
+        // Menu mostrato ad ogni iterazione (tranne la prima riga)
+        std::cout << "\nOpzioni disponibili:" << std::endl;
+        std::cout << "1) Crea una nuova lista" << std::endl;
+        std::cout << "2) Aggiungi un'attivita" << std::endl;
+        std::cout << "3) Rimuovi un'attivita" << std::endl;
+        std::cout << "4) Modifica un'attivita" << std::endl;
+        std::cout << "5) Segna come completata" << std::endl;
+        std::cout << "6) Visualizza attivita non completate" << std::endl;
+        std::cout << "7) Visualizza tutte le attivita" << std::endl;
+        std::cout << "8) Salva su file" << std::endl;
+        std::cout << "9) Carica da file" << std::endl;
+        std::cout << "0) Esci" << std::endl;
+
         std::cout << "\nScegli un'opzione (0 per uscire): ";
         std::cin >> scelta;
 
@@ -109,3 +112,4 @@ int main() {
 
     return 0;
 }
+
