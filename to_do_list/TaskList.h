@@ -1,7 +1,7 @@
 #ifndef MYTASKMANAGER_TASKLIST_H
 #define MYTASKMANAGER_TASKLIST_H
 
-#include "Task.h"
+#include "task.h"
 #include <list>
 #include <fstream>
 

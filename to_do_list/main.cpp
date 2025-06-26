@@ -1,17 +1,16 @@
 #include <iostream>
-#include "TaskList.h"
-#include "Task.h"
+#include "taskList.h"
+#include "task.h"
 
 int main() {
     TaskList elenco;
     bool uscita = false;
     int scelta;
 
-    // Mostra solo una volta all'avvio
+
     std::cout << "\n===== Benvenuto nel tuo Gestore Attivita =====" << std::endl;
 
     do {
-        // Menu mostrato ad ogni iterazione (tranne la prima riga)
         std::cout << "\nOpzioni disponibili:" << std::endl;
         std::cout << "1) Crea una nuova lista" << std::endl;
         std::cout << "2) Aggiungi un'attivita" << std::endl;

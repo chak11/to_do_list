@@ -2,7 +2,7 @@
 // Created by chaki on 23/06/2025.
 //
 #include "gtest/gtest.h"
-#include "../Date.h"
+#include "../date.h"
 
 
 TEST(DateTest, ConstructorTest) {
