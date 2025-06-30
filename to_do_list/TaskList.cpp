@@ -243,12 +243,19 @@ Task& TaskList::cerca(const std::string& parametro) {
 }
 
 double TaskList::calcolaPercentualeTaskCompletati() const {
-    if (elenco.empty()) return 0.0;
-    int completati = 0;
+    int totaleSottoTask = 0;
+    int sottoTaskCompletati = 0;
+
     for (const auto& t : elenco) {
-        if (t.èCompletata()) completati++;
+        for (const auto& s : t.getSubTasks()) {
+            totaleSottoTask++;
+            if (s.isCompletato()) sottoTaskCompletati++;
+        }
     }
-    return (static_cast<double>(completati) / elenco.size()) * 100.0;
+
+    if (totaleSottoTask == 0) return 0.0;
+
+    return (static_cast<double>(sottoTaskCompletati) / totaleSottoTask) * 100.0;
 }
 
 double TaskList::calcolaCompletamentoMedio() const {
