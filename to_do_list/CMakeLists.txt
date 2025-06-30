@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(task_manager main.cpp Date.h Date.cpp Task.h Task.cpp TaskList.h TaskList.cpp
         SubTask.cpp
-        SubTask.h)
+        SubTask.h
+       )
 
 add_subdirectory(test)
