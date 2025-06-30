@@ -21,9 +21,8 @@ int main() {
         std::cout << "7) Visualizza tutte le attivita\n";
         std::cout << "8) Segna un sotto-task come completato\n";
         std::cout << "9) Mostra percentuale di task completati\n";
-        std::cout << "10) Mostra completamento medio dei sottotask\n";
-        std::cout << "11) Salva su file\n";
-        std::cout << "12) Carica da file\n";
+        std::cout << "10) Salva su file\n";
+        std::cout << "11) Carica da file\n";
         std::cout << "0) Esci\n";
 
         std::cout << "\nScegli un'opzione (0 per uscire): ";
@@ -139,16 +138,11 @@ int main() {
                 break;
 
             case 10:
-                std::cout << "Completamento medio dei sottotask: "
-                          << elenco.calcolaCompletamentoMedio() << "%\n";
-                break;
-
-            case 11:
                 elenco.salvaSuFile(elenco.getTitolo() + ".txt");
                 std::cout << "Attivita salvate su file.\n";
                 break;
 
-            case 12:
+            case 11:
                 std::cout << "Nome del file da caricare: ";
                 std::getline(std::cin, nomeFile);
                 TaskList::caricaDaFile(nomeFile, elenco);
