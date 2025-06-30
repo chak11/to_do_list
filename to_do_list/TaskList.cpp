@@ -92,9 +92,9 @@ void TaskList::mostraTutte() const {
             );
 
             if (s.isCompletato())
-                std::cout << "    • " << pulita << " [COMPLETATA]" << std::endl;
+                std::cout << "    - " << pulita << " [COMPLETATA]" << std::endl;
             else
-                std::cout << "    • " << pulita << " [DA FARE]" << std::endl;
+                std::cout << "    - " << pulita << " [DA FARE]" << std::endl;
         }
     }
 
@@ -116,7 +116,7 @@ void TaskList::mostraIncompleti() const {
                                        [](unsigned char c) { return !isprint(c); }),
                         pulita.end()
                     );
-                    std::cout << "    • " << pulita << " [DA FARE]" << std::endl;
+                    std::cout << "    - " << pulita << " [DA FARE]" << std::endl;
                 }
             }
         }
