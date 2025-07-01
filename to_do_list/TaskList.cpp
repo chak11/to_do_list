@@ -1,10 +1,11 @@
+#include "TaskList.h"
 #include <iostream>
 #include <sstream>
 #include <iomanip>
 #include <algorithm>
-#include "taskList.h"
 
-TaskList::TaskList(const std::string& titolo) : titolo(titolo) {}
+TaskList::TaskList(const std::string& titolo)
+    : titolo(titolo) {}
 
 const std::list<Task>& TaskList::getListaAttivita() const {
     return elenco;
@@ -43,26 +44,31 @@ void TaskList::svuota() {
     totale = 0;
     completate = 0;
 }
-
 void TaskList::completaAttivita(const std::string& descrizione) {
     Task& attivita = trova(descrizione);
+
     if (!attivita.èCompletata()) {
         attivita.cambiaStato();
+
+        for (auto& s : attivita.getSubTasksMutable()) {
+            s.setCompletato(true);
+        }
+
         completate++;
     }
+
     mostraTutte();
 }
 
 void TaskList::modificaAttivita(const std::string& descrizione, const std::string& nuovaDesc, const Date& nuovaData) {
     Task& attivita = trova(descrizione);
     if (!attivita.getDescrizione().empty() || !attivita.getData().empty()) {
-        if (!nuovaDesc.empty())
+        if (!nuovaDesc.empty()) {
             attivita.setDescrizione(nuovaDesc);
-        else if (!(nuovaData == Date()))
+        }
+        if (!(nuovaData == Date())) {
             attivita.setScadenza(nuovaData);
-        else
-            attivita.cambiaStato();
-
+        }
         mostraTutte();
     } else {
         std::cout << "Attivita non trovata: " << descrizione << std::endl;
@@ -85,16 +91,15 @@ void TaskList::mostraTutte() const {
 
         for (const auto& s : a.getSubTasks()) {
             std::string pulita = s.getDescrizione();
-            pulita.erase(
-                std::remove_if(pulita.begin(), pulita.end(),
-                               [](unsigned char c) { return !isprint(c); }),
-                pulita.end()
-            );
+            pulita.erase(std::remove_if(pulita.begin(), pulita.end(),
+                                        [](unsigned char c) { return !isprint(c); }),
+                         pulita.end());
 
+            std::cout << "    - " << pulita;
             if (s.isCompletato())
-                std::cout << "    - " << pulita << " [COMPLETATA]" << std::endl;
+                std::cout << " [COMPLETATA]" << std::endl;
             else
-                std::cout << "    - " << pulita << " [DA FARE]" << std::endl;
+                std::cout << " [DA FARE]" << std::endl;
         }
     }
 
@@ -111,11 +116,9 @@ void TaskList::mostraIncompleti() const {
             for (const auto& s : a.getSubTasks()) {
                 if (!s.isCompletato()) {
                     std::string pulita = s.getDescrizione();
-                    pulita.erase(
-                        std::remove_if(pulita.begin(), pulita.end(),
-                                       [](unsigned char c) { return !isprint(c); }),
-                        pulita.end()
-                    );
+                    pulita.erase(std::remove_if(pulita.begin(), pulita.end(),
+                                               [](unsigned char c) { return !isprint(c); }),
+                                 pulita.end());
                     std::cout << "    - " << pulita << " [DA FARE]" << std::endl;
                 }
             }
@@ -131,11 +134,9 @@ void TaskList::completaSottoTask(const std::string& descrizioneTask, const std::
         if (task.getDescrizione() == descrizioneTask) {
             for (auto& s : task.getSubTasksMutable()) {
                 std::string pulita = s.getDescrizione();
-                pulita.erase(
-                    std::remove_if(pulita.begin(), pulita.end(),
-                                   [](unsigned char c) { return !isprint(c); }),
-                    pulita.end()
-                );
+                pulita.erase(std::remove_if(pulita.begin(), pulita.end(),
+                                           [](unsigned char c) { return !isprint(c); }),
+                             pulita.end());
 
                 if (pulita == descrizioneSottoTask && !s.isCompletato()) {
                     s.setCompletato(true);
@@ -161,11 +162,9 @@ void TaskList::salvaSuFile(const std::string& nomeFile) const {
 
         for (const auto& s : a.getSubTasks()) {
             std::string pulita = s.getDescrizione();
-            pulita.erase(
-                std::remove_if(pulita.begin(), pulita.end(),
-                               [](unsigned char c) { return !isprint(c); }),
-                pulita.end()
-            );
+            pulita.erase(std::remove_if(pulita.begin(), pulita.end(),
+                                       [](unsigned char c) { return !isprint(c); }),
+                         pulita.end());
 
             file << "> " << pulita << " - ";
             file << (s.isCompletato() ? "completato" : "non completato") << std::endl;

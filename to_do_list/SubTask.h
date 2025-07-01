@@ -5,20 +5,11 @@
 
 class SubTask {
 public:
-    SubTask(const std::string& desc, bool completato = false)
-        : descrizione(desc), completato(completato) {}
+    SubTask(const std::string& desc, bool completato = false);
 
-    const std::string& getDescrizione() const {
-        return descrizione;
-    }
-
-    bool isCompletato() const {
-        return completato;
-    }
-
-    void setCompletato(bool stato) {
-        completato = stato;
-    }
+    const std::string& getDescrizione() const;
+    bool isCompletato() const;
+    void setCompletato(bool stato);
 
 private:
     std::string descrizione;

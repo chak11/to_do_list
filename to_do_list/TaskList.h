@@ -1,7 +1,7 @@
 #ifndef TASKLIST_H
 #define TASKLIST_H
 
-#include "task.h"
+#include "Task.h"
 #include <list>
 #include <fstream>
 #include <string>
@@ -16,7 +16,6 @@ public:
 
     void setTitolo(const std::string& titolo);
     void aggiungiAttivita(const Task& attivita);
-
     void rimuoviAttivita(const std::string& descrizione);
     void svuota();
     void completaAttivita(const std::string& descrizione);
@@ -27,7 +26,6 @@ public:
     void mostraIncompleti() const;
 
     Task& trova(const std::string& descrizione);
-
     int getNumeroTotale() const;
     int getIncompleti() const;
 
