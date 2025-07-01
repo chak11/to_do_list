@@ -24,6 +24,7 @@
       <config projectName="to_do_list" targetName="gtest" />
       <config projectName="to_do_list" targetName="gmock" />
       <config projectName="to_do_list" targetName="gtest_main" />
+      <config projectName="to_do_list" targetName="task_manager" />
       <config projectName="to_do_list" targetName="gmock_main" />
     </generated>
   </component>
@@ -34,7 +35,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ef1f54e-d2f2-49ef-8320-d841549fc781" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubTask.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SubTask.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Task.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task.h" beforeDir="false" afterPath="$PROJECT_DIR$/Task.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TaskList.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskList.h" beforeDir="false" afterPath="$PROJECT_DIR$/TaskList.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +215,7 @@
       <workItem from="1750682192052" duration="12235000" />
       <workItem from="1751315778450" duration="44000" />
       <workItem from="1751361126896" duration="525000" />
-      <workItem from="1751361705652" duration="364000" />
+      <workItem from="1751361705652" duration="970000" />
     </task>
     <servers />
   </component>

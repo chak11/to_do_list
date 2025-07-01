@@ -1,8 +1,8 @@
 #ifndef TASK_H
 #define TASK_H
 
-#include "Date.h"
-#include "SubTask.h"
+#include "date.h"
+#include "subTask.h"
 #include <string>
 #include <sstream>
 #include <vector>

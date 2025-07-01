@@ -1,7 +1,7 @@
 #include <iostream>
-#include "TaskList.h"
-#include "Task.h"
-#include "SubTask.h"
+#include "taskList.h"
+#include "task.h"
+#include "subTask.h"
 
 int main() {
     TaskList elenco;
