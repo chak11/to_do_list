@@ -1,4 +1,4 @@
-#include "Task.h"
+#include "task.h"
 
 Task::Task(const Date &data, const std::string &descrizione, bool completata)
     : scadenza(data), testo(descrizione), completata(completata) {}
